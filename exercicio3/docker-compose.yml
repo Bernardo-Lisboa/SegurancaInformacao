@@ -1,0 +1,21 @@
+services:
+  webapp:
+    container_name: webapp
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+    environment:
+      PYTHONUNBUFFERED: 1
+      FLASK_ENV: development
+    networks:
+      - rede
+  redis:
+    container_name: redis
+    image: redis:alpine
+    networks:
+      - rede
+networks:
+  rede:
+    driver: bridge
