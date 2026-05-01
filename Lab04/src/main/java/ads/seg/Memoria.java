@@ -19,9 +19,13 @@ public class Memoria implements UserRepository {
 
     @Override
     public User findByLogin(String login) {
-        for (User user : memoria){
+        for (User user : memoria) {
             if (user.getLogin().equals(login)) return user;
         }
         return null;
+    }
+
+    public List<User> getMemoria() {
+        return memoria;
     }
 }

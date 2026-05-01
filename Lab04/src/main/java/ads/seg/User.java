@@ -3,6 +3,10 @@ package ads.seg;
 public class User {
     private String login, senha;
 
+    public User(String login, String senha){
+        this.login=login;
+        this.senha=senha;
+    }
     public String getLogin() {
         return login;
     }
